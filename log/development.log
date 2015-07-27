@@ -18597,3 +18597,2185 @@ Processing by UpOnBrowserController#create as HTML
   [1m[35m (16.9ms)[0m  commit transaction
   Rendered text template (0.1ms)
 Completed 200 OK in 34ms (Views: 2.2ms | ActiveRecord: 18.3ms)
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (37.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (21.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 20:13:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 374ms (Views: 325.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-07-27 20:13:28 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 121ms (Views: 118.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-07-27 20:14:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjQBNUYMjMg1xrEtskr+4rxcy/NEa3Jl197wFfZTSWFbXso1Y69THZ74wJhSPTNgMFXFhFP4YCP0IgXqQ8H2jg==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "makotom0330@docomo.ne.jp"], ["encrypted_password", "$2a$10$phOus2DvrbUbX9RIw6oXWObHCeQS0k.Joy4TV5Zwk60jawNIMdObi"], ["created_at", "2015-07-27 11:14:09.592812"], ["updated_at", "2015-07-27 11:14:09.592812"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-07-27 11:14:09.602780"], ["current_sign_in_at", "2015-07-27 11:14:09.602780"], ["last_sign_in_ip", "192.168.231.1"], ["current_sign_in_ip", "192.168.231.1"], ["sign_in_count", 1], ["updated_at", "2015-07-27 11:14:09.604819"], ["id", 1]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 317ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 20:14:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 20:14:12 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 122ms (Views: 83.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/index" for 192.168.231.1 at 2015-07-27 20:31:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.7ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (55.5ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 20:31:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 416ms (Views: 394.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-07-27 20:31:28 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XE1oHIHRqlXpa/qcdT14X12xFW7gi+BF4t1P8FL2Yp1pjxkqgGDTrdVr8K5gF4qbl3nD7793lBXMtOYBr0PevQ==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "makotom0330@docomo.ne.jp"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2015-07-27 11:31:28.190559"], ["sign_in_count", 2], ["updated_at", "2015-07-27 11:31:28.192696"], ["id", 1]]
+  [1m[36m (163.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 297ms (ActiveRecord: 164.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 20:31:28 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 109ms (Views: 103.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 20:31:51 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1[0m
+  Rendered home/item_detail.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `i_name' for nil:NilClass):
+    1: <html>
+    2:     <h1><%= @item.i_name %></h1>
+    3:     <body>
+    4:         <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
+    5:         <br>
+  app/views/home/item_detail.html.erb:2:in `_app_views_home_item_detail_html_erb___3920441197778034798_41771580'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 20:50:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 98ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 20:50:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `include_gon' for #<#<Class:0x00000005977660>:0x00000005976918>):
+    4: <head>
+    5:   <title>MIMS2</title>
+    6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    7:   <%= include_gon %>
+    8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    9:   <%= csrf_meta_tags %>
+   10: </head>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___521439058599700701_46734020'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.6ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 20:52:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 20:52:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 221ms (Views: 218.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 20:52:20 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 208ms (Views: 187.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 20:52:54 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9AdXorbKB07LSfIOIZqUBjObmpnNU9Ev8tVuPh/dVHqzD4bJJ7SxiaAaF6uPZuHf/vm+6FsnMN9c/+lVwWs5nw==", "item"=>{"i_name"=>"itemname", "category"=>"itemcategory", "e_key"=>"eventkey", "i_detail"=>"mkt", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x000000054e92d8 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-23493-1y2r0jv.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.8978727", "pos_y"=>"134.66790509999998"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "itemname"], ["category", "itemcategory"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "eventkey"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "1"], ["i_detail", "mkt"], ["pos_x", 33.8978727], ["pos_y", 134.66790509999998], ["created_at", "2015-07-27 11:52:54.662858"], ["updated_at", "2015-07-27 11:52:54.662858"]]
+  [1m[35m (240.7ms)[0m  commit transaction
+  Rendered text template (0.1ms)
+Completed 200 OK in 262ms (Views: 3.3ms | ActiveRecord: 242.0ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 20:53:16 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 80ms (Views: 74.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 20:53:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4GQBs3rauoYtsodo3cbAYjzcsnqVv/hFAVW82FbtSFGnbNDY66QMQUbhYs1zOrW78b6WCwPLGbWvfzuziFsltA==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `e_host' for nil:NilClass):
+  app/controllers/home_controller.rb:11:in `items'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.2ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 20:53:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 83ms (Views: 72.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/plan" for 192.168.231.1 at 2015-07-27 20:54:07 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#plan as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VFUnVU2WznVjTZ+euaS3P35gCvsdlV0TeTXbxKlxLHATXfY+3Oh4sggeejsXWMLmswIuiovhvOPXH1yvd8dBlQ==", "event"=>{"e_name"=>"eventname", "e_key"=>"eventKey", "e_detail"=>"mktevent", "e_location"=>"tokushima"}, "commit"=>"MAKE EVENT!!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "events" ("e_name", "e_key", "e_detail", "e_location", "e_host", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["e_name", "eventname"], ["e_key", "eventKey"], ["e_detail", "mktevent"], ["e_location", "tokushima"], ["e_host", "makotom0330@docomo.ne.jp"], ["created_at", "2015-07-27 11:54:07.136822"], ["updated_at", "2015-07-27 11:54:07.136822"]]
+  [1m[35m (116.0ms)[0m  commit transaction
+  Rendered text template (0.7ms)
+Completed 200 OK in 131ms (Views: 1.7ms | ActiveRecord: 117.2ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 20:54:12 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 72.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 20:54:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oVY9qgyBS1ACiW33Pugy8XAb3ovh59sSHlnUMbUnuHfmXuzBnf/9l2naiFKQFEcovXn6+neTOuKwc1Naa5HVkg==", "e_key"=>"eventKey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventKey"]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventKey"]]
+  Rendered home/items.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 56ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 20:54:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p+ecLfWWHxE2D8Qdheg6fhH1XYQZV48fo7wHrh6pyjvg701GZOip1l1cIbgrFE+n3Jd59Y8jbu8NloDFwB+n3g==", "e_key"=>"eventKey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventKey"]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "eventKey"]]
+  Rendered home/items.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 53ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 20:54:44 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 20:54:48 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 20:54:49 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/item_detail" for 192.168.231.1 at 2015-07-27 20:55:35 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/home/item_detail"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.2.0) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.2ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 20:55:42 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (31.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.2ms)
+
+
+Started GET "/home/index" for 192.168.231.1 at 2015-07-27 20:58:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/item_detail" for 192.168.231.1 at 2015-07-27 20:58:47 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/home/item_detail"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.2.0) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.4ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 20:58:55 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:04:30 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:04:30 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 209ms (Views: 206.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 21:04:34 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (11.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 93ms (Views: 56.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plan" for 192.168.231.1 at 2015-07-27 21:04:54 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#plan as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KwFwGaQ1WANCuM7GB82rEWjtzV2OqxPbdjZgc1/AVzFsCaFyNUvuxCnrK2OpMd7IpY/pLBjf8ivYHOcYgXY61A==", "event"=>{"e_name"=>"eventname", "e_key"=>"eventkey", "e_detail"=>"mkt", "e_location"=>"tokushima"}, "commit"=>"MAKE EVENT!!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "events" ("e_name", "e_key", "e_detail", "e_location", "e_host", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["e_name", "eventname"], ["e_key", "eventkey"], ["e_detail", "mkt"], ["e_location", "tokushima"], ["e_host", "makotom0330@docomo.ne.jp"], ["created_at", "2015-07-27 12:04:54.416759"], ["updated_at", "2015-07-27 12:04:54.416759"]]
+  [1m[35m (73.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 88ms (Views: 1.8ms | ActiveRecord: 74.8ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 21:04:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 108ms (Views: 76.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 21:05:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OSaWBKXZqltsS2qQGBGMTS5NeUWzViK61nySp/6hDsF+LkdvNKccnAcYjzW27fmU4y9dNCUiw0p4VhXMIBdjJA==", "item"=>{"i_name"=>"itemname", "category"=>"itemcategory", "e_key"=>"eventkey", "i_detail"=>"mktwaay", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fa155c6c318 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-23640-1no4cul.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.8978757", "pos_y"=>"134.6678882"}, "commit"=>"SEND!!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["i_name", "itemname"], ["category", "itemcategory"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "eventkey"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "1"], ["i_detail", "mktwaay"], ["pos_x", 33.8978757], ["pos_y", 134.6678882], ["created_at", "2015-07-27 12:05:38.209716"], ["updated_at", "2015-07-27 12:05:38.209716"]]
+  [1m[36m (247.7ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.1ms)
+Completed 200 OK in 267ms (Views: 1.7ms | ActiveRecord: 249.0ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 21:05:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:05:46 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BFT+ME6b2V9v10JTzjmwoWasMBmFIBaXfFw4QQSphvZDXC9b3+VvmASEp/ZgxcV4q84UaBNU92fSdr8q2h/rEw==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mItem Load (1.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "eventkey"]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 64ms (Views: 53.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:05:46 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:05:46 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.8ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (3.6ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:05:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:05:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.6ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:13:55 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 49ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:13:55 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 197ms (Views: 192.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:14:04 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5YdXfnXytxmhntUF9Mnb4RcwTc4YyTo9hZJ1Y6JLINqij4YV5IwB3srNMKBaNa442lJpv469280ruPIIfP1NPw==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventkey"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 115ms (Views: 65.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:14:04 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (5.4ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:14:04 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.0ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:14:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 87ms (Views: 83.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:14:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (1.7ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.5ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 21:15:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#item_detail as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.6ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:15:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 31ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:15:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 272ms (Views: 268.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:15:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ciLavuo9jm656WGctKMn/dS1gcWq/HWd6HAQQpRTeCywFoBatZA/tG0QCPcLvlGOjDydoDfECbZi0cq1OcgBQ==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "eventkey"]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 105ms (Views: 73.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:15:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (1.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered text template (0.1ms)
+Sent data  (3.0ms)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:15:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:15:16 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 61ms (Views: 57.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:15:16 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.0ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 21:19:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#item_detail as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.9ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 21:19:08 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 268ms (Views: 246.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:19:13 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GjZdpuIs3eI20PV2eor7ZHws7rXlwSXMaV2IsVfin5FdPozNc1JrJV2DENPUdo69sU7KxHO1xDzHdw/aiVTydA==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mItem Load (1.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventkey"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 95ms (Views: 69.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:19:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered text template (0.1ms)
+Sent data  (2.9ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:19:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (1.8ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.2ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:19:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 125ms (Views: 120.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:19:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.1ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 21:20:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#item_detail as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.7ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 21:21:02 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 267ms (Views: 238.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:21:07 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ey+lDWNAMphutOkS7kN6g3TcopkOLGiUWme63TtwrIE8J3Rm8j6EXwXnDLdAvw9aub6G6JhYiWT0TT225cbBZA==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mItem Load (0.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventkey"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 82ms (Views: 58.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:21:07 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (1.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (3.8ms)
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:21:07 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (1.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (2.2ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/item_detail?id=2" for 192.168.231.1 at 2015-07-27 21:21:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (2.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 86ms (Views: 80.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:21:10 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (1.3ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:31:32 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 47ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:31:32 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 216ms (Views: 213.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:31:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IEM4NABxQvOtAVygK8Pz3ppUnOuRzR7O3gsgs95eYodnS+lfkQ/0NMZSuQWFP4YHVza4mge5/z5wIafYAOgPYg==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mItem Load (0.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventkey"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 103ms (Views: 76.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:31:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (3.7ms)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:31:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.9ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:31:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 87ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:31:42 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.3ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:34:17 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:34:17 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 245ms (Views: 241.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:34:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4wIpSUTcqpM0oEE+DZDTmO5R2oqCJO4Ol7PoxXRQKH6kCvgi1aIcVF/zpJujbKZBIzP++xRQD/45mW+uquZFmw==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "eventkey"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 126ms (Views: 74.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:34:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (1.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (2.6ms)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:34:23 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (0.5ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:34:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 85ms (Views: 79.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:34:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (0.9ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 21:38:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#item_detail as HTML
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `pos_x' for nil:NilClass):
+  app/controllers/home_controller.rb:31:in `item_detail'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 21:38:29 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 21:38:29 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 247ms (Views: 243.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 21:38:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E91hSVaLQMFSPypFc7nAZLiZNp9hktgE/Qb9kxo32M9U1bAix/X2Bjlsz+DdRbW9dfsS7vfmOfRTLHr4xIG1Kg==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mItem Load (1.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "eventkey"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 84ms (Views: 58.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/image/2" for 192.168.231.1 at 2015-07-27 21:38:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (29.9ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data  (1.7ms)
+Completed 200 OK in 35ms (Views: 1.5ms | ActiveRecord: 29.9ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:38:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.5ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 21:38:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 21:38:38 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.0ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (13.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (11.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (17.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "STRING PRIMARY KEY" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (16.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[36m (11.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "STRING PRIMARY KEY NOT NULL" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (28.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (33.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (12.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (11.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  NOT NULL ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "NOT": syntax error: NOT NULL ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (11.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE event ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: no such table: event: ALTER TABLE event ADD PRIMARY KEY (e_key);
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE events ADD PRIMARY KEY(e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY(e_key);
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (11.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "events" ("e_name" varchar NOT NULL, "e_key" varchar NOT NULL, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "events" ("e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE events ADD PRIMARY KEY (e_key);
+SQLite3::SQLException: near "PRIMARY": syntax error: ALTER TABLE events ADD PRIMARY KEY (e_key);
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (17.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "events" ("e_name" varchar NOT NULL, "e_key" varchar, "STRING PRIMARY KEY" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 23:40:10 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 288ms (Views: 241.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-07-27 23:40:12 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aiAP8Eh23Glx/vRnCpa1GFqXkq3f934zg3CZGLiJQlEtKN6b2QhqrhqtEcKkasDBl/W23EmDn8MtWh5zZj8vtA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "makotom0330@docomo.ne.jp"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aiAP8Eh23Glx/vRnCpa1GFqXkq3f934zg3CZGLiJQlEtKN6b2QhqrhqtEcKkasDBl/W23EmDn8MtWh5zZj8vtA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 132ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-07-27 23:40:17 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GEdwmsG4jEY5Hk1MuB4tRWNMCXtAynYyTjsCBt4+w4dfT6HxUMY6gVJNqOkW4licri4tCta+l8LgEYVtAIiuYg==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "makotom0330@docomo.ne.jp"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GEdwmsG4jEY5Hk1MuB4tRWNMCXtAynYyTjsCBt4+w4dfT6HxUMY6gVJNqOkW4licri4tCta+l8LgEYVtAIiuYg==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 157ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-07-27 23:40:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 92ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-07-27 23:40:32 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BwRKi2EFpO3mgxcP+9gHyaIEsS5+WWRiQHHaKcbojYZADJvg8HsSKo3Q8qpVJHIQb2aVX+gthZLuW11CGF7gYw==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "makotom0330@docomo.ne.jp"], ["encrypted_password", "$2a$10$KBvitoz8Fo0QeT002cwfTuBI/CMNjwa3qj6ZKjib565kv30m4iUDa"], ["created_at", "2015-07-27 14:40:32.904858"], ["updated_at", "2015-07-27 14:40:32.904858"]]
+  [1m[35m (20.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-07-27 14:40:32.929272"], ["current_sign_in_at", "2015-07-27 14:40:32.929272"], ["last_sign_in_ip", "192.168.231.1"], ["current_sign_in_ip", "192.168.231.1"], ["sign_in_count", 1], ["updated_at", "2015-07-27 14:40:32.931144"], ["id", 1]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 134ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 23:40:32 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 23:40:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pftzWDM6CjUGNe5iRNdEvAvgb0P48FB9O9wAplOYRUfi86IzokS88m1mC8fqKzFlxoJLMm6EsY2V9ofNjS4oog==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `e_host' for nil:NilClass):
+  app/controllers/home_controller.rb:11:in `items'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 23:41:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 89ms (Views: 70.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 23:41:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1pJiP/0C0OXbiErSgV+LuOsgqDo9g+0FWBvDgnU4rxuRmrNUbHxmIrDbr3cvo/5hJkKMS6v3DPX2MUTpq47C/g==", "item"=>{"i_name"=>"itemname", "category"=>"itemcategory", "e_key"=>"eventkey", "i_detail"=>"mktmkt", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x00000004cc5bb0 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-25147-1ahvj37.jpg>, @original_filename="table2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.8978728", "pos_y"=>"134.6678966"}, "commit"=>"SEND!!"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["i_name", "itemname"], ["category", "itemcategory"], ["pic_data", "<119192 bytes of binary data>"], ["e_key", "eventkey"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "1"], ["i_detail", "mktmkt"], ["pos_x", 33.8978728], ["pos_y", 134.6678966], ["created_at", "2015-07-27 14:41:26.370232"], ["updated_at", "2015-07-27 14:41:26.370232"]]
+  [1m[36m (216.2ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.1ms)
+Completed 200 OK in 234ms (Views: 6.1ms | ActiveRecord: 217.5ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 23:41:34 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 97ms (Views: 89.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 23:41:37 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 91ms (Views: 79.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 23:41:39 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 81ms (Views: 75.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 23:41:44 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LiJLT1KEu/nddMXjRkLmwludr0aMkrO9orPQOBExw5tpKpokw/oNPrYnIEbovpMblv+LNxrmUk0MmVdTz4eufg==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `e_host' for nil:NilClass):
+  app/controllers/home_controller.rb:11:in `items'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 23:42:07 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/plan" for 192.168.231.1 at 2015-07-27 23:42:30 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#plan as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sRp6a345vxI3bv0lqPmu9t23gUTYVq9NC9PZRg2LrSr2EqsA70cJ1Vw9GIAGBdsvENWlNU4iTr2l+V4t0z3Azw==", "event"=>{"e_name"=>"hoge", "e_key"=>"eventkey", "e_detail"=>"hoge", "e_location"=>"tokushima"}, "commit"=>"MAKE EVENT!!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.5ms)[0m  INSERT INTO "events" ("e_name", "e_key", "e_detail", "e_location", "e_host", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["e_name", "hoge"], ["e_key", "eventkey"], ["e_detail", "hoge"], ["e_location", "tokushima"], ["e_host", "makotom0330@docomo.ne.jp"], ["created_at", "2015-07-27 14:42:30.100313"], ["updated_at", "2015-07-27 14:42:30.100313"]]
+  [1m[36m (265.2ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.1ms)
+Completed 200 OK in 295ms (Views: 2.0ms | ActiveRecord: 282.0ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 23:42:51 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 69ms (Views: 64.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/home/items" for 192.168.231.1 at 2015-07-27 23:42:56 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1SnTMuXqLMhAJw+hYDKbUKzvYXtZGfNGI+jnimFvMomSIQJZdJSaDyt06gTOzu6JYY1FCs9tEraNwmDhv9lfbA==", "e_key"=>"eventkey", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "eventkey"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ? LIMIT 1  [["e_key", "eventkey"]]
+  Rendered home/items.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 89ms (Views: 83.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 23:42:57 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Sent data  (1.5ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/item_detail?id=1" for 192.168.231.1 at 2015-07-27 23:42:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/item_detail.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/image/1" for 192.168.231.1 at 2015-07-27 23:42:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.1ms)
+Sent data  (1.8ms)
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (57.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (5.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151029085313)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085313"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151029085812)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "i_name" varchar NOT NULL, "category" varchar, "e_key" text NOT NULL, "pic_data" blob(10485760), "pos_x" float, "pos_y" float, "f_name" varchar NOT NULL, "f_id" text NOT NULL, "f_date" datetime, "i_detail" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151029085812"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20151031161703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "events" ("e_name" varchar NOT NULL, "e_key" varchar, "e_detail" text, "e_host" varchar, "e_location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151031161703"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-28 00:01:08 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 271ms (Views: 222.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-07-28 00:01:11 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Atd5jqZH+0adFu/sLZPQj3FzwFUKyCwP7iWnNKDrMABF36jlNzlNgfZFCkmDb6VWvBHkJJy8zf9ADyBffl1d5Q==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "makotom0330@docomo.ne.jp"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Atd5jqZH+0adFu/sLZPQj3FzwFUKyCwP7iWnNKDrMABF36jlNzlNgfZFCkmDb6VWvBHkJJy8zf9ADyBffl1d5Q==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 131ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-07-28 00:01:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-07-28 00:01:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Nbsn8ZXTzGJ6xhJnC9MYhOFCVFA22w4WEDquunRDkKz3j30Vyn59uK4/ewy0zm73uctINavjcj2am3RN2djpw==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "makotom0330@docomo.ne.jp"], ["encrypted_password", "$2a$10$aXD1wQOPe9lIWU3DgBw3ZO/jTpqI/kmeGxnZlJd6efEXmNwclF0jO"], ["created_at", "2015-07-27 15:01:26.613615"], ["updated_at", "2015-07-27 15:01:26.613615"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-07-27 15:01:26.631081"], ["current_sign_in_at", "2015-07-27 15:01:26.631081"], ["last_sign_in_ip", "192.168.231.1"], ["current_sign_in_ip", "192.168.231.1"], ["sign_in_count", 1], ["updated_at", "2015-07-27 15:01:26.634144"], ["id", 1]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 141ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-28 00:01:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 80ms (Views: 76.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-28 00:01:44 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 96ms (Views: 71.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plan" for 192.168.231.1 at 2015-07-28 00:02:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#plan as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgHXJg/qmQwAGAPo1jgN2oR9nRsA1KsLWAw0V/pCJ/U1CQZNnpQvy2tL5k14xHgDSR+5apagSvv2JrM8JPRKEA==", "event"=>{"e_name"=>"event1", "e_key"=>"eventkey", "e_detail"=>"", "e_location"=>""}, "commit"=>"MAKE EVENT!!"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("e_name", "e_key", "e_detail", "e_location", "e_host", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["e_name", "event1"], ["e_key", "eventkey"], ["e_detail", ""], ["e_location", ""], ["e_host", "makotom0330@docomo.ne.jp"], ["created_at", "2015-07-27 15:02:06.940993"], ["updated_at", "2015-07-27 15:02:06.940993"]]
+  [1m[35m (198.0ms)[0m  commit transaction
+  Rendered text template (0.1ms)
+Completed 200 OK in 213ms (Views: 4.1ms | ActiveRecord: 199.2ms)
+
+
+Started POST "/plan" for 192.168.231.1 at 2015-07-28 00:02:12 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#plan as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgHXJg/qmQwAGAPo1jgN2oR9nRsA1KsLWAw0V/pCJ/U1CQZNnpQvy2tL5k14xHgDSR+5apagSvv2JrM8JPRKEA==", "event"=>{"e_name"=>"event1", "e_key"=>"eventkey", "e_detail"=>"", "e_location"=>""}, "commit"=>"MAKE EVENT!!"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("e_name", "e_key", "e_detail", "e_location", "e_host", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["e_name", "event1"], ["e_key", "eventkey"], ["e_detail", ""], ["e_location", ""], ["e_host", "makotom0330@docomo.ne.jp"], ["created_at", "2015-07-27 15:02:12.012117"], ["updated_at", "2015-07-27 15:02:12.012117"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 9.0ms)

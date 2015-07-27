@@ -33,7 +33,7 @@ Event Key
       </td>
       <% if @a_right == true then%>
         <td>
-            <%= button_to "DLEATE",{:action => "delete" , id: i.id ,e_key: i.e_key }, :confirm => "本当に削除しますか？" %>
+            <%= button_to "DELETE",{:action => "delete" , id: i.id ,e_key: i.e_key }, :confirm => "本当に削除しますか？" %>
 
         </td>
       <% end %>

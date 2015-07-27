@@ -28,6 +28,8 @@ class HomeController < ApplicationController
   end
   def item_detail
     @item = Item.where(id: params[:id]).first
+    gon.lat = @item.pos_x;
+    gon.lng = @item.pos_y;
   end
 
   def delete

@@ -1,10 +1,30 @@
+<script src="http://maps.google.com/maps/api/js?v=3&sensor=false">
+</script>
+<script>
+  function initialize() {
+    var latlng = new google.maps.LatLng(gon.lat,gon.lng);
+    var myOptions = {
+      zoom: 18,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var mapMap = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+    var markerOpts = {
+      position: latlng,
+      map: mapMap,
+      title: "落とし物はここです"
+    };
+    var marker = new google.maps.Marker(markerOpts);
+ }
+</script>
 <html>
+  
     <h1><%= @item.i_name %></h1>
-    <body>
+    <body onload="initialize()">
         <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
         <br>
         <br>
-	  	<table border="1">
+          <table border="1">
 		  <tr>
 		    <th>image</th>
 		  </tr>
@@ -13,15 +33,23 @@
         		<%= image_tag(url_for(action: 'get_image' , id: @item.id), size:'640x480')%>
 		      </td>
 		  </tr>
-		  <tr>
-		    <th>detail</th>
-		  </tr>
-		  <tr>
-			<td style="width: 70px;border: 1px solid #000;word-break: break-all;">
-			  <%= @item.i_detail %>
+		<tr>
+			<th>GoogleMap</th>
+		</tr>
+		<tr>
+			<td id="map_canvas" style="width:50%;height:400px;">
 			</td>
-		  </tr>
-		</table>
+		</tr>
+		<tr>
+			<th>detail
+			</th>
+		</tr>
+		<tr>
+			<td style="width: 70px;border: 1px solid #000;word-break: break-all;">
+				<%= @item.i_detail %>
+			</td>
+		</tr>
+	  </table>
     </body>
 
 </html>
