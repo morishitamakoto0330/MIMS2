@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
 
-  get 'home/show'
+  get 'home/show' => 'home#get_image'
   root to: "home#index"
 
   get 'upload_page' => 'up_on_browser#upload_page'

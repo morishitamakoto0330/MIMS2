@@ -24,7 +24,8 @@
         <%= i.f_name%>
       </td>
       <td>
-        <%= image_tag(url_for(:action => 'get_image', :id => i.id), :size => '100x100')%>
+        <%= image_tag(url_for(:action => 'get_image' , :id => i.id), :size => '100x100')%>
+        <%= i.id %>
       </td>
     </tr>
   <% end %>
