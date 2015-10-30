@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  i_name: MyString
+  category: MyString
+  e_key: MyText
+  pic_data: 
+  pos_x: 1
+  pos_y: 1
+  f_name: MyString
+  f_id: MyText
+  f_date: 2015-10-29 17:58:12
+
+two:
+  i_name: MyString
+  category: MyString
+  e_key: MyText
+  pic_data: 
+  pos_x: 1
+  pos_y: 1
+  f_name: MyString
+  f_id: MyText
+  f_date: 2015-10-29 17:58:12

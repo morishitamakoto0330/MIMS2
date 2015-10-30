@@ -1,0 +1,31 @@
+<h1>Home#show</h1>
+<p>Find me in app/views/home/show.html.erb</p>
+
+<table border="1">
+  <tr>
+    <th>Item Name</th>
+    <th>Category</th>
+    <th>Event Key</th>
+    <th>Finder</th>
+    <th>Image</th>
+  </tr>
+  <% @item.each do |i| %>
+    <tr>
+      <td>
+        <%= i.i_name %>
+      </td>
+      <td>
+        <%= i.category %>
+      </td>
+      <td>
+        <%= i.e_key %>
+      </td>
+      <td>
+        <%= i.f_name%>
+      </td>
+      <td>
+        <%= image_tag(url_for(:action => 'get_image', :id => i.id), :size => '100x100')%>
+      </td>
+    </tr>
+  <% end %>
+</table>
