@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  get 'events/eventer'
+
   devise_for :users
   get 'home/index'
   get 'home/items'
   post 'home/items'
   get 'image/:id' => 'home#get_image'
-  
+   
   root to: "home#items"
 
   get 'upload_page' => 'up_on_browser#upload_page'
   post 'create' => 'up_on_browser#create'
+  get 'eventer' => 'events#eventer'
+  post 'plan' => 'events#plan'
+
+  get 'event_detail' => 'events#event_detail'
+  #get 'create' => 'home/items'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

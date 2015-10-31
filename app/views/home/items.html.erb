@@ -21,7 +21,7 @@ Event Key
         <%= i.category %>
       </td>
       <td>
-        <%= i.e_key %>
+        <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
       </td>
       <td>
         <%= i.f_name%>
@@ -36,3 +36,4 @@ Event Key
 </table>
 <br>
 <input type="button" onclick="location.href='../upload_page'"value="UPLOAD PAGE">
+<input type="button" onclick="location.href='../eventer'"value="EVENTER PAGE">

@@ -1,0 +1,11 @@
+<html>
+  <% @event.each do |e| %>
+    <h1><%= e.e_key %></h1>
+  <body>
+    <b>Host is <%= e.e_host %></b>
+    <br>
+    <br>
+    <%= e.e_detail %>
+  </body>
+  <% end %>
+</html>

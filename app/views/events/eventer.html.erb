@@ -1,0 +1,25 @@
+<h1>Events#eventer</h1>
+<p>Find me in app/views/events/eventer.html.erb</p>
+
+<%= form_for @event, :url => {:action => :plan} do |f| %>
+
+  <div class="field">
+    <%= f.label :e_name, "EVENT 名前" %>
+    <%= f.text_field :e_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :e_key, "EVENT KEY" %>
+    <%= f.text_field :e_key %>
+  </div>
+
+  <div class="field">
+    <%= f.label :e_detail, "DETAIL" %>
+    <%= f.text_field :e_detail %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "MAKE EVENT!!" %>
+  </div>
+<% end %>
+<input type="button" onclick="location.href='/home/items'"value="ITEMS PAGE">
