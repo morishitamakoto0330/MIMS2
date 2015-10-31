@@ -1,6 +1,8 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
-
+<%= form_tag( { action: :items}) do %>
+Event Key
+<%= text_field_tag :e_key%>
+<%= submit_tag '送信' %>
+<% end %>
 <table border="1">
   <tr>
     <th>Item Name</th>
@@ -9,6 +11,7 @@
     <th>Finder</th>
     <th>Image</th>
   </tr>
+  <% if @items != nil%>
   <% @items.each do |i| %>
     <tr>
       <td>
@@ -29,4 +32,7 @@
       </td>
     </tr>
   <% end %>
+  <% end %>
 </table>
+<br>
+<input type="button" onclick="location.href='../upload_page'"value="UPLOAD PAGE">

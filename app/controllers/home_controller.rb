@@ -1,9 +1,18 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, only: [:index,:items]
   def index
   end
 
   def items
-    @items = Item.all
+    if request.post? then
+        if params[:e_key] == "all" then
+            @items = Item.all
+        else
+            @items = Item.where(e_key: params[:e_key])
+        end
+    else
+        @items = nil
+    end
   end
   
   def get_image

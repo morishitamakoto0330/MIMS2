@@ -1,5 +1,5 @@
 class UpOnBrowserController < ApplicationController
-
+before_action :authenticate_user! , only: [:upload_page] 
     def upload_page
       @item = Item.new
     end
