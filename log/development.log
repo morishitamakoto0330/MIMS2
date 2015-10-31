@@ -8144,3 +8144,245 @@ Processing by HomeController#get_image as HTML
   Rendered text template (0.0ms)
 Sent data  (0.4ms)
 Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:15:58 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a0mcqf48TbrpGcH+GtZvpl2DlaH7uC3ZQ1qPyAWOFEbTUrFRuu209/OiW2IX/ICknhMtsgXrjNU27wUiTLCoWQ==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-01 03:15:58 +0900
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:15:58 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/event_detail?e_key=sample" for ::1 at 2015-11-01 03:16:06 +0900
+Processing by EventsController#event_detail as HTML
+  Parameters: {"e_key"=>"sample"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."e_key" = ?  [["e_key", "sample"]]
+  Rendered events/event_detail.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:16:16 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ixRr16lDKKFBC3LnB6dRN4Cx2wPNctocuDfB3WKaLRAzD0Yv7ZLR7Fuw6HsKjb41QyFjEDMhexDNgks3K6SRDw==", "e_key"=>"samp", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "samp"]]
+  Rendered home/items.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:16:20 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"exfInOaCLm8I4zqoXyuuG8f2MixC7d4Y2bmx7bncpnHDDOVkolPXIhJYoDRSAUEZBGaKP7y+fxSsDDsH8OIabg==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:16:20 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:17:28 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iP2GQuMI5BRQVT2lO/1YRy+cMuJ0xHhEkzeowEcM+4Qw5qu6p9kdWUrupzk217dF7AyK8YqX2UjmgiIqDjJHmw==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:17:28 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.3ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/upload_page" for ::1 at 2015-11-01 03:17:33 +0900
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/create" for ::1 at 2015-11-01 03:19:09 +0900
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+XKpNSaBFNKDtZf5KtoY+Vmh7fZwgb2FbqgSpAqeolf/udckEv9HlC1TMPpgYdhJvY/pCeRp/pgDyqg2RTGlg==", "item"=>{"i_name"=>"Car (BMW Z3)", "category"=>"My car", "e_key"=>"sample", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fcaed0ebe50 @tempfile=#<Tempfile:/tmp/RackMultipart20151101-2332-z4gpk0.jpg>, @original_filename="las_2100457.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"las_2100457.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "Car (BMW Z3)"], ["category", "My car"], ["pic_data", "<260304 bytes of binary data>"], ["e_key", "sample"], ["f_name", "sample@gmail.com"], ["f_id", "1"], ["created_at", "2015-10-31 18:19:09.959515"], ["updated_at", "2015-10-31 18:19:09.959515"]]
+  [1m[35m (93.3ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 98ms (Views: 0.4ms | ActiveRecord: 94.1ms)
+
+
+Started GET "/home/items" for ::1 at 2015-11-01 03:19:12 +0900
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/items.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:19:16 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePiqUbOiZUWekRxSJ7PDNwyJyuyV/lLef0OkypABHt/A44ep93OcCIQqhs4qmSw1zxly/2ut89IK9i4g2T+iwA==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/image/14" for ::1 at 2015-11-01 03:19:16 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 14]]
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:19:17 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/event_detail?e_key=sample" for ::1 at 2015-11-01 03:19:24 +0900
+Processing by EventsController#event_detail as HTML
+  Parameters: {"e_key"=>"sample"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."e_key" = ?  [["e_key", "sample"]]
+  Rendered events/event_detail.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:20:12 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePiqUbOiZUWekRxSJ7PDNwyJyuyV/lLef0OkypABHt/A44ep93OcCIQqhs4qmSw1zxly/2ut89IK9i4g2T+iwA==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 81ms (Views: 78.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-01 03:20:12 +0900
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:20:12 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/image/14" for ::1 at 2015-11-01 03:20:12 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 14]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/event_detail?e_key=sample" for ::1 at 2015-11-01 03:20:18 +0900
+Processing by EventsController#event_detail as HTML
+  Parameters: {"e_key"=>"sample"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."e_key" = ?  [["e_key", "sample"]]
+  Rendered events/event_detail.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.2ms)
