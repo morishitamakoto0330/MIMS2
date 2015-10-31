@@ -5,11 +5,7 @@ class HomeController < ApplicationController
 
   def items
     if request.post? then
-        if params[:e_key] == "all" then
-            @items = Item.all
-        else
-            @items = Item.where(e_key: params[:e_key])
-        end
+        @items = Item.where(e_key: params[:e_key])
     else
         @items = nil
     end

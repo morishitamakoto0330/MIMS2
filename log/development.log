@@ -7847,3 +7847,300 @@ Processing by EventsController#event_detail as HTML
   Rendered events/event_detail.html.erb within layouts/application (0.8ms)
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
 Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:00:22 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (10.3ms)[0m  SELECT "items".* FROM "items"
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "er"]]
+  Rendered home/items.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 10.6ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    21:         <%= i.category %>
+    22:       </td>
+    23:       <td>
+    24:         <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    25:       </td>
+    26:       <td>
+    27:         <%= i.f_name%>
+  app/views/home/items.html.erb:24:in `block in _app_views_home_items_html_erb___2146904602064868410_70254687295780'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254687295780'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.6ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.9ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:01:46 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `e_key=' for nil:NilClass):
+  app/controllers/home_controller.rb:10:in `items'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.1ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.5ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:02:09 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (6.3ms)[0m  SELECT "items".* FROM "items"
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `e_key=' for #<Item::ActiveRecord_Relation:0x007fcaec9d21f0>):
+  app/controllers/home_controller.rb:10:in `items'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:03:15 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (7.2ms)[0m  SELECT "items".* FROM "items"
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "debug"]]
+  Rendered home/items.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 8.8ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    21:         <%= i.category %>
+    22:       </td>
+    23:       <td>
+    24:         <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    25:       </td>
+    26:       <td>
+    27:         <%= i.f_name%>
+  app/views/home/items.html.erb:24:in `block in _app_views_home_items_html_erb___2146904602064868410_70254687295780'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254687295780'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:05:58 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (6.7ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "debug"]]
+  Rendered home/items.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 8.5ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    21:         <%= i.category %>
+    22:       </td>
+    23:       <td>
+    24:         <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    25:       </td>
+    26:       <td>
+    27:         <%= i.f_name%>
+  app/views/home/items.html.erb:24:in `block in _app_views_home_items_html_erb___2146904602064868410_70254687295780'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254687295780'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.7ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.7ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:08:33 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (10.1ms)[0m  SELECT "items".* FROM "items"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "debug"]]
+  Rendered home/items.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 10.5ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    24:         <% if i.e_key == "all" then%>
+    25:             debug
+    26:         <% else %>
+    27:             <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    28:         <% end %>
+    29:       </td>
+    30:       <td>
+  app/views/home/items.html.erb:27:in `block in _app_views_home_items_html_erb___2146904602064868410_70254664333980'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254664333980'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.0ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:09:25 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (6.6ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "debug"]]
+  Rendered home/items.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 8.3ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    24:         <% if i.e_key == "all" then%>
+    25:             debug
+    26:         <% else %>
+    27:             <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    28:         <% end %>
+    29:       </td>
+    30:       <td>
+  app/views/home/items.html.erb:27:in `block in _app_views_home_items_html_erb___2146904602064868410_70254664333980'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254664333980'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.3ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:10:23 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"all", "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (9.4ms)[0m  SELECT "items".* FROM "items"
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1[0m  [["e_key", "debug"]]
+  Rendered home/items.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 9.7ms)
+
+ActionView::Template::Error (undefined method `e_name' for nil:NilClass):
+    24:         <% if i.e_key == "all" then%>
+    25:             debug
+    26:         <% else %>
+    27:             <%= link_to Event.where(e_key: i.e_key).first.e_name, controller: "events", action: "event_detail", e_key: i.e_key %>
+    28:         <% end %>
+    29:       </td>
+    30:       <td>
+  app/views/home/items.html.erb:27:in `block in _app_views_home_items_html_erb___2146904602064868410_70254664333980'
+  app/views/home/items.html.erb:15:in `_app_views_home_items_html_erb___2146904602064868410_70254664333980'
+
+
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.0ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.9ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/haruka/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:12:54 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ug/l5I/udFyzhaC789m256qzE1Bnf2N8oKgg3CV1jVTqFMgcyz+NEak+Oif+81nlaSOrQ5kswnDVHao2bEsxSw==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 65ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:12:54 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/home/items" for ::1 at 2015-11-01 03:13:29 +0900
+Processing by HomeController#items as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a0mcqf48TbrpGcH+GtZvpl2DlaH7uC3ZQ1qPyAWOFEbTUrFRuu209/OiW2IX/ICknhMtsgXrjNU27wUiTLCoWQ==", "e_key"=>"sample", "commit"=>"送信"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."e_key" = ?[0m  [["e_key", "sample"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."e_key" = ?  ORDER BY "events"."id" ASC LIMIT 1  [["e_key", "sample"]]
+  Rendered home/items.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 103ms (Views: 87.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/image/13" for ::1 at 2015-11-01 03:13:29 +0900
+Processing by HomeController#get_image as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ?  ORDER BY "items"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
