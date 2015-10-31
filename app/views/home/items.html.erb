@@ -9,7 +9,7 @@
     <th>Finder</th>
     <th>Image</th>
   </tr>
-  <% @item.each do |i| %>
+  <% @items.each do |i| %>
     <tr>
       <td>
         <%= i.i_name %>
@@ -24,7 +24,7 @@
         <%= i.f_name%>
       </td>
       <td>
-        <%= image_tag(url_for(:action => 'get_image' , :id => i.id), :size => '100x100')%>
+        <%= image_tag(url_for(action: 'get_image' , id: i.id), size: '100x100')%>
         <%= i.id %>
       </td>
     </tr>
