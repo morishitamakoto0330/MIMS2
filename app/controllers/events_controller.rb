@@ -9,6 +9,7 @@ class EventsController < ApplicationController
         @event.e_name = param[:e_name]
         @event.e_key = param[:e_key]
         @event.e_detail = param[:e_detail]
+        @event.e_location = param[:e_location]
         @event.e_host = current_user.email
         @event.save
         render :text => params.to_s

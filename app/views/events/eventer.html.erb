@@ -1,4 +1,4 @@
-<h1>Events#eventer</h1>
+<h1>Event Planning Page!!</h1>
 <p>Find me in app/views/events/eventer.html.erb</p>
 
 <%= form_for @event, :url => {:action => :plan} do |f| %>
@@ -15,7 +15,12 @@
   <br>
   <div class="field">
     <%= f.label :e_detail, "DETAIL    " %>
-    <%= f.text_field :e_detail %>
+    <%= f.text_area :e_detail, :cols => 35, :rows=> 8  %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :e_location, "LOCATION  " %>
+    <%= f.text_field :e_location %>
   </div>
   <br>
   <div class="actions">

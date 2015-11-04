@@ -1,11 +1,27 @@
 <html>
+  <head>
+  </head>
   <% @event.each do |e| %>
     <h1><%= e.e_name %></h1>
   <body>
     <b>Host is <%= e.e_host %></b>
-    <br>
-    <br>
-    <%= e.e_detail %>
+    <table border="1">
+      <tr>
+        <th>location</th>
+      </tr>
+      <tr>
+        <td>
+         <a <%= "href=https://www.google.co.jp/maps/search/#{e.e_location}" %> ><%= e.e_location %></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Event Detail</th>
+      </tr>
+      <tr>
+        <td style="width: 500px;border: 1px solid #000;word-break: break-all;">
+          <%= e.e_detail %>
+        </td>
+      </tr>
   </body>
   <% end %>
 </html>

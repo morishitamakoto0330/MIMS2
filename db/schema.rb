@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151031161703) do
     t.string   "e_key",      null: false
     t.text     "e_detail"
     t.string   "e_host"
+    t.string   "e_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
