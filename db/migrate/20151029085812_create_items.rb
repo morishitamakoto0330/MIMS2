@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :f_name , :null => false
       t.text :f_id , :null => false
       t.datetime :f_date
-      t.text :detail
+      t.text :i_detail
   
       t.timestamps null: false
     end

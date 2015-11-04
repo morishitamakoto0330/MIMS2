@@ -4,8 +4,15 @@ class HomeController < ApplicationController
   end
 
   def items
-    if request.post? then
+    @a_right = false
+    if params[:e_key] != nil then
         @items = Item.where(e_key: params[:e_key])
+        host = Event.find_by(e_key: params[:e_key])
+        if host.e_host == current_user.email then
+            @a_right = true
+        else
+            @a_right = false
+        end
     else
         @items = nil
     end
@@ -18,5 +25,14 @@ class HomeController < ApplicationController
     else
       render file: "#{Rails.root}/public/404", layout: false, status: :not_found
     end
+  end
+  def item_detail
+    @item = Item.where(id: params[:id]).first
+  end
+
+  def delete
+    del_item = Item.where(id: params[:id])
+    del_item.delete_all
+    redirect_to :action => "items", :e_key => params[:e_key]
   end
 end

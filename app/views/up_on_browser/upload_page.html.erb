@@ -1,27 +1,33 @@
 <%= form_for @item, :url => {:action => :create} do |f| %>
-
+<h1> Upload Page!!</h1>
   <div class="field">
     <%= f.label :i_name, "Item 名前" %>
     <%= f.text_field :i_name %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :category, "Category" %>
     <%= f.text_field :category %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :e_key, "Event Key" %>
     <%= f.text_field :e_key %>
   </div>
-
+  <br>
+  <div class="field">
+    <%= f.label :i_detail, "item detail" %>
+    <%= f.text_field :i_detail %>
+  </div>
+  <br>
   <div class="field">
     <%= f.label :pic_data, "Picture" %>
     <%= f.file_field :pic_data,accept: "image/jpeg" %>
   </div>
- 
+  <br>
   <div class="actions">
     <%= f.submit "SEND!!" %>
   </div>
 <% end %>
+<br>
 <input type="button" onclick="location.href='/home/items'"value="ITEMS PAGE">

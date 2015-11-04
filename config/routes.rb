@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post 'plan' => 'events#plan'
 
   get 'event_detail' => 'events#event_detail'
+  get 'item_detail' => 'home#item_detail'
+
+  post 'delete' => 'home#delete'
   #get 'create' => 'home/items'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

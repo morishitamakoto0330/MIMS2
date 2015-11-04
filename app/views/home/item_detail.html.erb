@@ -1,0 +1,27 @@
+<html>
+    <h1><%= @item.i_name %></h1>
+    <body>
+        <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
+        <br>
+        <br>
+	  	<table border="1">
+		  <tr>
+		    <th>image</th>
+		  </tr>
+		  <tr>
+		      <td>
+        		<%= image_tag(url_for(action: 'get_image' , id: @item.id), size:'640x480')%>
+		      </td>
+		  </tr>
+		  <tr>
+		    <th>detail</th>
+		  </tr>
+		  <tr>
+			<td>
+			  <%= @item.i_detail %>
+			</td>
+		  </tr>
+		</table>
+    </body>
+
+</html>

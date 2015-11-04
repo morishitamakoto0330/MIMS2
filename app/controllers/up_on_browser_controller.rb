@@ -13,6 +13,7 @@ before_action :authenticate_user! , only: [:upload_page]
       @item.e_key = param[:e_key]
       @item.f_name = current_user.email
       @item.f_id = current_user.id
+      @item.i_detail = param[:i_detail]
       @item.save
       render :text => params.to_s
     end

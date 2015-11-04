@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151031161703) do
     t.string   "f_name",     null: false
     t.text     "f_id",       null: false
     t.datetime "f_date"
+    t.text     "i_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

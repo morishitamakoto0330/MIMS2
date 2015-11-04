@@ -3,6 +3,7 @@ Event Key
 <%= text_field_tag :e_key%>
 <%= submit_tag '送信' %>
 <% end %>
+
 <table border="1">
   <tr>
     <th>Item Name</th>
@@ -15,7 +16,7 @@ Event Key
   <% @items.each do |i| %>
     <tr>
       <td>
-        <%= i.i_name %>
+        <%= link_to i.i_name, controller: "home", action: "item_detail", id: i.id %>
       </td>
       <td>
         <%= i.category %>
@@ -30,6 +31,12 @@ Event Key
         <%= image_tag(url_for(action: 'get_image' , id: i.id), size: '100x100')%>
         <%= i.id %>
       </td>
+      <% if @a_right == true then%>
+        <td>
+            <%= button_to "DLEATE",{:action => "delete" , id: i.id ,e_key: i.e_key }, :confirm => "本当に削除しますか？" %>
+
+        </td>
+      <% end %>
     </tr>
   <% end %>
   <% end %>
