@@ -17865,3 +17865,735 @@ Processing by HomeController#items as HTML
   [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."e_key" = ?  [["e_key", "sample"]]
   Rendered home/items.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 192.168.231.1 at 2015-07-27 15:44:52 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.0ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 15:45:05 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 15:45:05 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 681ms (Views: 665.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-07-27 15:45:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-07-27 15:45:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-07-27 15:45:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-07-27 15:45:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-07-27 15:45:06 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 15:45:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 15:45:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 192.168.231.1 at 2015-07-27 15:45:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.9ms)
+
+
+Started GET "/users/index" for 192.168.231.1 at 2015-07-27 15:45:35 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.7ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 15:45:39 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-07-27 15:45:49 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-07-27 15:46:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NeIwnnI8xq2smJNl+JK4LBVvNAf2Zgjm1uXahZop5PK1pKc/wshwT1PyqvpRfowimjlhAIoQI38dpuNbzWjNlw==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "makotom0330@docomo.ne.jp"], ["encrypted_password", "$2a$10$1LLxWoPDE.RLIq3ALaHLg.NoddoLZiE/dIUgMBFXsT6s6EGeSViTq"], ["created_at", "2015-07-27 06:46:15.132863"], ["updated_at", "2015-07-27 06:46:15.132863"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (18.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-07-27 06:46:15.148313"], ["current_sign_in_at", "2015-07-27 06:46:15.148313"], ["last_sign_in_ip", "192.168.231.1"], ["current_sign_in_ip", "192.168.231.1"], ["sign_in_count", 1], ["updated_at", "2015-07-27 06:46:15.149985"], ["id", 2]]
+  [1m[35m (3.8ms)[0m  commit transaction
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 162ms (ActiveRecord: 35.2ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 15:46:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 72ms (Views: 68.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 15:46:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `pos_lat' for #<Item:0x007f65319c0a70>):
+    28:   <br>
+    29:   <div class="field">
+    30:     <%= f.label :pos_lat, "緯度" %>
+    31:     <%= f.text_field :pos_lat %>  
+    32:   </div>
+    33:   <br>
+    34:   <div class="field">
+  app/views/up_on_browser/upload_page.html.erb:31:in `block in _app_views_up_on_browser_upload_page_html_erb__1725045796316250015_70036298206100'
+  app/views/up_on_browser/upload_page.html.erb:2:in `_app_views_up_on_browser_upload_page_html_erb__1725045796316250015_70036298206100'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 15:51:08 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 44ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 15:51:08 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 284ms (Views: 281.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 15:51:14 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 78ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 15:52:16 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WWkSh5OAH1AwGBAi6I872RFFwc/wSZ1vhkxgzhIz0DXZL4UmI3Spss9yKb1BYw/XnhOUyIw/tvZND1kQRXL5UA==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"mkt is lost", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fa9b1d93278 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-20788-1xevvu5.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.8979983", "pos_y"=>"134.6679845"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (20.5ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "mkt is lost"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 06:52:16.356538"], ["updated_at", "2015-07-27 06:52:16.356538"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  Rendered text template (0.1ms)
+Completed 200 OK in 43ms (Views: 2.8ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 15:53:48 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WWkSh5OAH1AwGBAi6I872RFFwc/wSZ1vhkxgzhIz0DXZL4UmI3Spss9yKb1BYw/XnhOUyIw/tvZND1kQRXL5UA==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"mkt is lost", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fa9b1a9b7a0 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-20788-1xvl55y.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.897998", "pos_y"=>"134.6680006"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (35.1ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "mkt is lost"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 06:53:48.828311"], ["updated_at", "2015-07-27 06:53:48.828311"]]
+  [1m[35m (147.1ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 191ms (Views: 2.2ms | ActiveRecord: 182.5ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 15:54:44 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/item_detail" for 192.168.231.1 at 2015-07-27 15:55:37 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#item_detail as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" IS NULL  ORDER BY "items"."id" ASC LIMIT 1
+  Rendered home/item_detail.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `i_name' for nil:NilClass):
+    1: <html>
+    2:     <h1><%= @item.i_name %></h1>
+    3:     <body>
+    4:         <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
+    5:         <br>
+  app/views/home/item_detail.html.erb:2:in `_app_views_home_item_detail_html_erb___262353100792763449_36421840'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.6ms)
+
+
+Started GET "/home/index" for 192.168.231.1 at 2015-07-27 15:56:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 109ms (Views: 105.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/event_detail" for 192.168.231.1 at 2015-07-27 15:57:10 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#event_detail as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."e_key" IS NULL
+  Rendered events/event_detail.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 179ms (Views: 119.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/eventer" for 192.168.231.1 at 2015-07-27 15:57:58 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 160ms (Views: 148.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 15:59:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/eventer" for 192.168.231.1 at 2015-07-27 15:59:13 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#eventer as HTML
+  Rendered events/eventer.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-07-27 15:59:16 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 15:59:17 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 192.168.231.1 at 2015-07-27 16:01:53 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (114.1ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:01:55 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 326ms (Views: 306.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:01:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HwiUhQt2AFX3GC1mtZBAZfk6rjye0ZpiBRowp1lj8tWfsJWcU7fGWZJEWQ8zkELYQHO1Zo+iUH7kUUy2aBvsRA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "makotom0330@docomo.ne.jp"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2015-07-27 07:01:59.579364"], ["sign_in_count", 2], ["updated_at", "2015-07-27 07:01:59.581237"], ["id", 2]]
+  [1m[36m (337.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.231.129:3000/
+Completed 302 Found in 483ms (ActiveRecord: 339.1ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:01:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 164ms (Views: 157.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:02:03 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 111ms (Views: 78.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:04:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rf3+vEjlFVk6bpS31fg8V/6+m3bBcYXoJqE6fyfyQQa0lzW8bUbKjJFQ5QI1j/HVcreVAdbil64FXc+AkmD+6Q==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"hogehoge", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fc924fdf8a0 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-20969-16xncz6.jpg>, @original_filename="table2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.899546", "pos_y"=>"134.66887069999999"}, "commit"=>"SEND!!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<119192 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "hogehoge"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 07:04:59.442064"], ["updated_at", "2015-07-27 07:04:59.442064"]]
+  [1m[36m (147.8ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.1ms)
+Completed 200 OK in 170ms (Views: 4.4ms | ActiveRecord: 149.6ms)
+
+
+Started GET "/users/index" for 192.168.231.1 at 2015-07-27 16:13:50 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/makoto/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.3ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:13:52 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:13:52 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 250ms (Views: 248.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:13:56 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 95ms (Views: 67.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:14:04 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oHsTBwkDn4At+D1qADMXiRci10ZFxxqGIknXx2NnAUBREdgHLKBAVYbGTN/gRNoLmyvZMVJUCMABtSI41vW+rw==", "item"=>{"i_name"=>"", "category"=>"", "e_key"=>"", "i_detail"=>""}, "commit"=>"SEND!!"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `read' for nil:NilClass):
+  app/controllers/up_on_browser_controller.rb:12:in `create'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.9ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:14:51 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oHsTBwkDn4At+D1qADMXiRci10ZFxxqGIknXx2NnAUBREdgHLKBAVYbGTN/gRNoLmyvZMVJUCMABtSI41vW+rw==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"hogehoge", "i_detail"=>"mkt", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007f93cd671ea8 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-21117-qkwjve.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "hogehoge"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "mkt"], ["pos_x", 0], ["pos_y", 0], ["created_at", "2015-07-27 07:14:51.524637"], ["updated_at", "2015-07-27 07:14:51.524637"]]
+  [1m[35m (182.5ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 206ms (Views: 4.2ms | ActiveRecord: 183.8ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:17:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 99ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:17:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 452ms (Views: 447.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:18:02 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 294ms (Views: 233.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:18:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nl36XPzp2pBU33NmWDNI+Rp9A+HPIW+B5+U8sQbSaqVvNzFc2UoFRf/hAtO4RIV7lnQNltiyfcfEGclOs0DVSg==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"mkt", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fef51db1238 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-21152-d0x1r.jpg>, @original_filename="table.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<86665 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "mkt"], ["pos_x", 0], ["pos_y", 0], ["created_at", "2015-07-27 07:18:26.593939"], ["updated_at", "2015-07-27 07:18:26.593939"]]
+  [1m[35m (279.8ms)[0m  commit transaction
+  Rendered text template (0.2ms)
+Completed 200 OK in 292ms (Views: 2.5ms | ActiveRecord: 280.9ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:31:56 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 43ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:31:56 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 331ms (Views: 328.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:31:58 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 119ms (Views: 102.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:32:19 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyZz8lTGel5u7E7v64CQsLSuZuGbS0wThDUScDRIy6ZGTLjycWWli8XSP1oL910yOKdolozYXlWnyeePgdp0SQ==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"m", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fd3c1d9e558 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-21219-1r7a9b7.jpg>, @original_filename="table2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.899223899999996", "pos_y"=>"134.668803"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<119192 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "m"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 07:32:19.313537"], ["updated_at", "2015-07-27 07:32:19.313537"]]
+  [1m[35m (161.9ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 176ms (Views: 3.3ms | ActiveRecord: 163.4ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:32:59 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyZz8lTGel5u7E7v64CQsLSuZuGbS0wThDUScDRIy6ZGTLjycWWli8XSP1oL910yOKdolozYXlWnyeePgdp0SQ==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"m", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007fd3c1ac3b58 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-21219-m0mtek.jpg>, @original_filename="table2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.8992274", "pos_y"=>"134.6688538"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<119192 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "m"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 07:32:59.979789"], ["updated_at", "2015-07-27 07:32:59.979789"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 0.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:35:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:35:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 930ms (Views: 927.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:35:26 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 225ms (Views: 173.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:39:23 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 113ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:39:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 298ms (Views: 293.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:39:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 76ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-07-27 16:40:46 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://192.168.231.129:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 41ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 192.168.231.1 at 2015-07-27 16:40:46 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered home/items.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 255ms (Views: 253.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-07-27 16:40:47 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 72ms (Views: 52.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:41:17 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/lt7qio864n4upl/+kQS9+oPg5DBUwZcZ6IiYhvuBVUPMbCqD580XFOE6MoaM991ZgaN59bAFBpEXtedrny6ug==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"mkt", "pos_x"=>"33.8992602", "pos_y"=>"134.6690295"}, "commit"=>"SEND!!"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `read' for nil:NilClass):
+  app/controllers/up_on_browser_controller.rb:12:in `create'
+
+
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.6ms)
+
+
+Started POST "/create" for 192.168.231.1 at 2015-07-27 16:41:28 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/lt7qio864n4upl/+kQS9+oPg5DBUwZcZ6IiYhvuBVUPMbCqD580XFOE6MoaM991ZgaN59bAFBpEXtedrny6ug==", "item"=>{"i_name"=>"hogehoge", "category"=>"hogehoge", "e_key"=>"aaaaaaa", "i_detail"=>"mkt", "pic_data"=>#<ActionDispatch::Http::UploadedFile:0x007feaf1101a10 @tempfile=#<Tempfile:/tmp/RackMultipart20150727-21351-7357d4.jpg>, @original_filename="table2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[pic_data]\"; filename=\"table2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "pos_x"=>"33.899067099999996", "pos_y"=>"134.6689202"}, "commit"=>"SEND!!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "items" ("i_name", "category", "pic_data", "e_key", "f_name", "f_id", "i_detail", "pos_x", "pos_y", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["i_name", "hogehoge"], ["category", "hogehoge"], ["pic_data", "<119192 bytes of binary data>"], ["e_key", "aaaaaaa"], ["f_name", "makotom0330@docomo.ne.jp"], ["f_id", "2"], ["i_detail", "mkt"], ["pos_x", 33], ["pos_y", 134], ["created_at", "2015-07-27 07:41:28.587429"], ["updated_at", "2015-07-27 07:41:28.587429"]]
+  [1m[35m (16.9ms)[0m  commit transaction
+  Rendered text template (0.1ms)
+Completed 200 OK in 34ms (Views: 2.2ms | ActiveRecord: 18.3ms)

@@ -14,6 +14,8 @@ before_action :authenticate_user! , only: [:upload_page]
       @item.f_name = current_user.email
       @item.f_id = current_user.id
       @item.i_detail = param[:i_detail]
+      @item.pos_x = param[:pos_x].to_i
+      @item.pos_y = param[:pos_y].to_i
       @item.save
       render :text => params.to_s
     end
